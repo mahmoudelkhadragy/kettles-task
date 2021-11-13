@@ -38,4 +38,44 @@ $(function () {
     $(this).siblings().slideToggle();
     $(this).toggleClass("active");
   });
+
+  // on click kettels navigators
+  $(".navigate_item").click(function () {
+    const image = $(".slider_img img");
+    let dataVal = $(this).data("color");
+    let imagSrc = image.attr("src");
+    let targetSrc = `./images/${dataVal}.png`;
+
+    if (imagSrc !== targetSrc) {
+      // slide animate
+      slideAnimateVertical(image, targetSrc);
+      // change active
+      makeTargetActive($(this));
+      // change background header to the image color
+      changeHeaderBackground(dataVal);
+    } else {
+      // make logic if he clicked the same active
+    }
+  });
+
+  function slideAnimateVertical(image, targetSrc) {
+    image.animate({ top: "2000px" }, 500);
+    image.animate({ right: "2000px" }, 0);
+    image.animate({ top: "-2000px" }, 0);
+    image.animate({ right: "0px" }, 0, function () {
+      image.attr("src", targetSrc);
+    });
+    image.animate({ top: "0px" }, 500);
+  }
+
+  function makeTargetActive(target) {
+    target.addClass("active");
+    target.siblings().removeClass("active");
+  }
+
+  function changeHeaderBackground(classValue) {
+    const header = $(".slider_header");
+    header.removeClass("kettle-1 kettle-2 kettle-3");
+    header.addClass(classValue);
+  }
 });

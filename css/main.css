@@ -21,6 +21,17 @@ a {
   font-size: 14px;
   display: inline-block;
 }
+
+.kettle-1 {
+  background-color: var(--terqwaz);
+}
+.kettle-2 {
+  background-color: var(--red);
+}
+.kettle-3 {
+  background-color: var(--pink);
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
@@ -269,9 +280,10 @@ a {
 /* end mobile menu style */
 
 .slider_header {
-  background-color: var(--terqwaz);
   height: calc(100vh - 62px);
   overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 }
 .wrapper {
   height: 100%;
@@ -371,6 +383,7 @@ a {
   padding: 15px 15px 10px 15px;
   cursor: pointer;
   border: 1px solid var(--white);
+  transition: all 0.2s ease-in-out;
 }
 .slider_header_content .kettles_navigate .navigate_item:hover img {
   transform: scale(1.15);
