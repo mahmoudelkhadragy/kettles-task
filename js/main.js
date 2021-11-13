@@ -78,4 +78,31 @@ $(function () {
     header.removeClass("kettle-1 kettle-2 kettle-3");
     header.addClass(classValue);
   }
+
+  $(".wrapper").swipe({
+    //Generic swipe handler for all directions
+    swipe: function (
+      event,
+      direction,
+      distance,
+      duration,
+      fingerCount,
+      fingerData
+    ) {
+      if (direction == "left") {
+        console.log("left");
+      }
+      if (direction == "right") {
+        console.log("right");
+      }
+      if (direction == "down") {
+        console.log("down");
+      }
+      if (direction == "up") {
+        console.log("up");
+      }
+    },
+    //Default is 75px, set to 0 for demo so any distance triggers swipe
+    threshold: 0,
+  });
 });
