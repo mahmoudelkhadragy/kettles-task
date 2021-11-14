@@ -206,6 +206,7 @@ a {
   justify-content: space-between;
   padding: 10px 20px;
   cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 .mobile_menu .mobile_menu_item .mobile_menu_item_head.active {
   background-color: #000;
@@ -233,11 +234,11 @@ a {
 .mobile_sub_menu {
   position: absolute;
   background: #fff;
-  left: -8px;
-  width: 100vw;
   top: 44px;
+  left: 0px;
+  width: 100%;
+  padding: 10px 27px;
   z-index: 1;
-  padding: 10px 26px;
   display: none;
 }
 .mobile_sub_menu_content .menu_head {
@@ -259,10 +260,11 @@ a {
 .mobile_sub_menu_content .menu_content {
   display: flex;
   justify-content: space-between;
-  padding: 3px;
   height: 0;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
+  padding: 0px 10px;
+  background-color: #f3f3f3;
 }
 .mobile_sub_menu_content.active .menu_content {
   height: 150px;
