@@ -195,6 +195,7 @@ a {
   left: 0;
   padding: 10px;
   display: none;
+  z-index: 555;
 }
 .mobile_menu .mobile_menu_item {
   position: relative;
