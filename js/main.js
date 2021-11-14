@@ -53,6 +53,8 @@ $(function () {
       makeTargetActive($(this));
       // change background header to the image color
       changeHeaderBackground(dataVal);
+      // change small navigator to active
+      makeSmallNavigateActive(dataVal);
     } else {
       // make logic if he clicked the same active
     }
@@ -77,6 +79,14 @@ $(function () {
     const header = $(".slider_header");
     header.removeClass("kettle-1 kettle-2 kettle-3");
     header.addClass(classValue);
+  }
+
+  function makeSmallNavigateActive(targetVal) {
+    let target = $(
+      ".small_navigate[data-" + targetVal + '="' + targetVal + '"]'
+    );
+    target.addClass("active");
+    target.siblings().removeClass("active");
   }
 
   $(".wrapper").swipe({

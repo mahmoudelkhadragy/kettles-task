@@ -350,9 +350,12 @@ a {
   display: inline-block;
   border-radius: 50%;
   border: 1px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .watch_video span.icon i {
-  transform: translate(10px, 10px) scale(1);
+  transform: scale(1);
   padding: 8px 7px 8px 10px;
   border-radius: 50%;
   color: var(--white);
@@ -422,6 +425,30 @@ a {
   transition: all 0.2s ease-in-out;
 }
 
+/* small navigator */
+.small_navigators {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+.small_navigators .small_navigate {
+  width: 8px;
+  height: 8px;
+  border: 1px solid #fff;
+  margin-right: 10px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  display: block;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.small_navigators .small_navigate.active {
+  background-color: #fff;
+}
+.small_navigators .small_navigate:last-of-type {
+  margin-right: 10px;
+}
+
 /* media query screens until  875px*/
 @media (max-width: 1200px) and (min-width: 875px) {
   .wrapper {
@@ -457,6 +484,9 @@ a {
 
 /* screen from  874px to 751px*/
 @media (max-width: 874px) and (min-width: 751px) {
+  .small_navigators {
+    right: 10px;
+  }
   .wrapper {
     width: 95%;
   }
@@ -488,9 +518,9 @@ a {
     height: 45px;
   }
   .watch_video span.icon i {
-    transform: translate(7px, 7px) scale(1);
+    transform: scale(1);
     font-size: 13px !important;
-    animation: pulseA 2s infinite;
+    animation: pulse 2s infinite;
   }
   .watch_video .text {
     font-size: 16px;
@@ -514,6 +544,20 @@ a {
   }
   .mobile_menu {
     display: none;
+  }
+
+  .small_navigators {
+    position: absolute;
+    right: 50%;
+    top: 95%;
+  }
+
+  .small_navigators .small_navigate {
+    border: 1px solid #fff;
+    margin-right: 10px;
+    border-radius: 50%;
+    margin-bottom: 0px;
+    display: inline-block;
   }
 
   .wrapper {
@@ -555,9 +599,9 @@ a {
     height: 45px;
   }
   .watch_video span.icon i {
-    transform: translate(1px, 7px) scale(1);
+    transform: scale(1);
     font-size: 13px !important;
-    animation: pulseB 2s infinite;
+    animation: pulse 2s infinite;
   }
 
   .slider_header_image .slider_img {
@@ -569,51 +613,17 @@ a {
 
 @keyframes pulse {
   0% {
-    transform: scale(0.95) translate(10px, 10px);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
 
   70% {
-    transform: scale(1) translate(10px, 10px);
+    transform: scale(1);
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
   }
 
   100% {
-    transform: scale(0.95) translate(10px, 10px);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes pulseA {
-  0% {
-    transform: scale(0.95) translate(7px, 7px);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
-
-  70% {
-    transform: scale(1) translate(7px, 7px);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-    transform: scale(0.95) translate(7px, 7px);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-@keyframes pulseB {
-  0% {
-    transform: scale(0.95) translate(1px, 7px);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
-
-  70% {
-    transform: scale(1) translate(1px, 7px);
-    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-    transform: scale(0.95) translate(1px, 7px);
+    transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
